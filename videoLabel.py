@@ -200,7 +200,7 @@ class AutoLabel(object):
 		xmlfile.close()
 		pass
 	#compute iou value 計算兩個矩形的iou值
-	def ComputeIoU(self, rec1, rec2):
+	def ComputeIoU(self, rec1: list, rec2: list) -> float:
 		S_rec1 = (rec1[2] - rec1[0]) * (rec1[3] - rec1[1])
 		S_rec2 = (rec2[2] - rec2[0]) * (rec2[3] - rec2[1])
 	
@@ -215,7 +215,7 @@ class AutoLabel(object):
 	
 	    # judge if there is an intersect
 		if left_line >= right_line or top_line >= bottom_line:
-			return 0
+			return 0.
 		else:
 			intersect = (right_line - left_line) * (bottom_line - top_line)
 			return (intersect / (sum_area - intersect))*1.0
