@@ -6,6 +6,7 @@
 python main.py --video_name=test.mp4
 ```
 ##### 本人測試的環境(用 pip list 叫出來的)
+```bash
 absl-py            0.8.1
 astor              0.8.0
 attrs              19.3.0
@@ -79,3 +80,4 @@ Werkzeug           0.16.0
 wheel              0.33.6
 wincertstore       0.2
 zipp               3.1.0
+```
