@@ -1,0 +1,33 @@
+<annotation>
+    <folder>output</folder>
+    <filename>test00004.jpg</filename>
+    <size>
+        <width>1280</width>
+        <height>720</height>
+        <depth>3</depth>
+    </size>
+    <object>
+        <name>Pedestrian_Crossing</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2</xmin>
+            <ymin>473</ymin>
+            <xmax>786</xmax>
+            <ymax>537</ymax>
+        </bndbox>
+    </object>
+    <object>
+        <name>Pedestrian_Crossing</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>22</xmin>
+            <ymin>587</ymin>
+            <xmax>948</xmax>
+            <ymax>720</ymax>
+        </bndbox>
+    </object>
+</annotation>

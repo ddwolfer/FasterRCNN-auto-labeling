@@ -1,6 +1,5 @@
 import argparse
 import os
-import tensorflow as tf
 from videoLabel import AutoLabel
 
 parser = argparse.ArgumentParser(description='')
@@ -19,6 +18,8 @@ def main():
 		start = AutoLabel(args)
 		start.run()
 		pass
+	else:
+		print("use --video_name to set video name")
 
 if __name__ == '__main__':
 	main()

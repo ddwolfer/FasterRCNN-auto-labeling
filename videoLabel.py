@@ -92,16 +92,10 @@ class AutoLabel(object):
 		detectCount = 0 #拿來命名用的
 		# 跑影片抓每一鎮圖片
 		while(video.isOpened()):
-			print("PPPPPAAAAAAAATTTTTTTTTHHHHHHH:",PATH_TO_VIDEO)
 			ret, frame = video.read()
 			cv2.imshow("object detection", frame)
 			cv2.waitKey(1)
-			print(frameCount)
-			print("frame:",ret)
-			print(frame.shape)
 			height, width = frame.shape[:2]
-			print(width)
-			print(height)
 			_, frame1 = video.read()
 			frame_expanded = np.expand_dims(frame, axis=0)
 		    
@@ -111,6 +105,11 @@ class AutoLabel(object):
 			else:
 				frameCount += 1 
 				continue
+			print(frameCount)
+			print("frame:",ret)
+			print(frame.shape)
+			print(width)
+			print(height)
 		    # Perform the actual detection by running the model with the image as input
 			(boxes, scores, classes, num) = sess.run(
 		        [detection_boxes, detection_scores, detection_classes, num_detections],
