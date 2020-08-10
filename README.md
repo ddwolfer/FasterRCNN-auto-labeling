@@ -1,9 +1,26 @@
 # FasterRCNN-auto-labeling
 
-可以用下列的指令測試
+從這裡的FasterRCNN做訓練 : https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10
+<br>
+然後你會有東西出現在 inference_graph 資料夾裡面
+<br>
+把 inference_graph 裡面的東西複製過來
+<br>
+還有 training 裡面的 labelmap.pbtxt
+<br>
+然後大概就可以跑了
+
+##### 可以用下列的指令測試
 
 ```bash
 python main.py --video_name=test.mp4
+```
+##### 可以更改的變數
+```bash
+video_name : 影片名稱
+video_frame : 幾個frame辨識一次 預設30
+num_classes : 有幾個要偵測的物件 預設1
+save_path : 儲存的資料夾 預設output
 ```
 ##### 本人測試的環境(用 pip list 叫出來的)
 ```bash
