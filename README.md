@@ -1,7 +1,9 @@
 # FasterRCNN-auto-labeling
 CH:
 <br>
-從這裡的FasterRCNN做訓練 : https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10
+從這裡的FasterRCNN做訓練 : 
+<br>
+https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10
 <br>
 然後你會有東西出現在 inference_graph 資料夾裡面
 <br>
@@ -13,7 +15,10 @@ CH:
 <br>
 <br>
 EN:
-you can train your model form this github: https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10
+<br>
+you can train your model form this github:
+<br>
+https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10
 <br>
 and then you can get your model from folder "inference_graph" 
 <br>
