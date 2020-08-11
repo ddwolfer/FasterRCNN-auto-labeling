@@ -29,7 +29,6 @@ class AutoLabel(object):
 			print("create "+str(self.save_path)+" folder")
 			os.mkdir(self.save_path)
 		self.ModelOpen()
-		# self.SaveXmlFile("test1.jpg",[[1,2,3,4],[55,6,7,8]],["Pedstrain","Pedstrain"],480,640)
 		pass
 	#open model trained from FasterRCNN 把FasterRCNN訓練好的模組掉出來用
 	def ModelOpen(self):
