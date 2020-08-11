@@ -1,5 +1,6 @@
 # FasterRCNN-auto-labeling
-
+CH:
+<br>
 從這裡的FasterRCNN做訓練 : https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10
 <br>
 然後你會有東西出現在 inference_graph 資料夾裡面
@@ -8,21 +9,40 @@
 <br>
 還有 training 裡面的 labelmap.pbtxt
 <br>
-沒有意外的話大概就可以跑了
+沒有意外的話大概就可以跑了 下面蔡英文翻譯
+<br>
+<br>
+EN:
+you can train your model form this github: https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10
+<br>
+and then you can get your model from folder "inference_graph" 
+<br>
+copy whole data from inference_graph
+<br>
+and labelmap.pbtxt in training folder
+<br>
+if there are no accident, it should run
+<br>
+<br>
 
-##### 可以用下列的指令測試
+
+
+##### 可以用下列的指令測試 you can test with the following command
 
 ```bash
 python main.py --video_name=test.mp4
 ```
-##### 可以更改的變數
+##### 可以更改的變數(main.py裡面也可以看) arguments(you can also see these in main.py)
 ```bash
 video_name : 影片名稱
-video_frame : 幾個frame辨識一次 預設30
-num_classes : 有幾個要偵測的物件 預設1
-save_path : 儲存的資料夾 預設output
+video_group_folder : 如果你想要一口氣測很多影片，把他們放在同一個資料夾，然後在這邊輸入資料夾名稱
+video_frame : 幾個frame辨識一次，預設30，如果影片60frame，就是1秒測2次
+num_classes : 有幾個要偵測的物件，預設1
+model_path : model來源，預設inference_graph
+save_path : 儲存的資料夾，預設output
+model_threshold : 偵測目標的閥值，預設0.8，也就是80%準確度
 ```
-##### 本人測試的環境(用 pip list 叫出來的)
+##### 本人測試的環境 my environment(用 pip list 叫出來的)
 ```bash
 absl-py            0.8.1
 astor              0.8.0
