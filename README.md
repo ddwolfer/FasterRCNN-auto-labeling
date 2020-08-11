@@ -22,9 +22,7 @@ https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Trai
 <br>
 and then you can get your model from folder "inference_graph" 
 <br>
-copy whole data from inference_graph
-<br>
-and labelmap.pbtxt in training folder
+copy whole data from inference_graph and labelmap.pbtxt in training folder
 <br>
 if there are no accident, it should run
 <br>
