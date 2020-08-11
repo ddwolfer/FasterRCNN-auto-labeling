@@ -17,6 +17,9 @@ class AutoLabel(object):
 		self.video_frame = args.video_frame
 		self.video_name = args.video_name
 		self.num_classes = args.num_classes
+		self.video_group_folder = args.video_group_folder
+		self.model_threshold = args.model_threshold
+
 	def run(self):
 		print("path:",self.model_path)
 		print("path2:",self.save_path)
@@ -44,7 +47,10 @@ class AutoLabel(object):
 		# Path to label map file
 		PATH_TO_LABELS = os.path.join(CWD_PATH,'training','labelmap.pbtxt')
 		# Path to video
-		PATH_TO_VIDEO = os.path.join(CWD_PATH,VIDEO_NAME)
+		if(self.video_group_folder!=''):
+			PATH_TO_VIDEO = os.path.join(CWD_PATH,self.video_group_folder,VIDEO_NAME)
+		else:
+			PATH_TO_VIDEO = os.path.join(CWD_PATH,VIDEO_NAME)
 		# Number of classes the object detector can identify
 		#設定有幾個東西要偵測
 		NUM_CLASSES = self.num_classes
@@ -93,6 +99,9 @@ class AutoLabel(object):
 		# 跑影片抓每一鎮圖片
 		while(video.isOpened()):
 			ret, frame = video.read()
+			if ret == False:
+				print("----video end----")
+				break
 			cv2.imshow("object detection", frame)
 			cv2.waitKey(1)
 			height, width = frame.shape[:2]
@@ -100,12 +109,13 @@ class AutoLabel(object):
 			frame_expanded = np.expand_dims(frame, axis=0)
 		    
 			if frameCount % self.video_frame ==0:
+				frameCount = 0 
 				frameCount += 1 
 				pass
 			else:
 				frameCount += 1 
 				continue
-			print(frameCount)
+			print("--[ Frame INFO]--")
 			print("frame:",ret)
 			print(frame.shape)
 			print(width)
@@ -118,10 +128,10 @@ class AutoLabel(object):
 			classesList = [] #之後拿來做成xml檔案用的
 			
 			num = int(np.squeeze(num))
-			print("number of detect"+str(num))
-		    #把>80%的資料抓出來START
+			# print("number of detect"+str(num))
+		    #把>80%的資料抓出來START(預設80%)
 			for i in range(0,num):
-				if scores[0][i] >= 0.8:
+				if scores[0][i] >= self.model_threshold:
 					print("find")
 					print(height, width)
 					y1, x1, y2, x2 = boxes[0][i]
@@ -159,7 +169,7 @@ class AutoLabel(object):
 				detectCount += 1
 				pass
 			else:
-				print("nothing detect")
+				print("detect result: nothing here")
 		# Clean up
 		video.release()
 		cv2.destroyAllWindows()	
