@@ -19,6 +19,8 @@ class AutoLabel(object):
 		self.num_classes = args.num_classes
 		self.video_group_folder = args.video_group_folder
 		self.model_threshold = args.model_threshold
+		self.resize_width = args.resize_width
+		self.resize_height = args.resize_height
 
 	def run(self):
 		print("path:",self.model_path)
@@ -104,7 +106,6 @@ class AutoLabel(object):
 			cv2.imshow("object detection", frame)
 			cv2.waitKey(1)
 			height, width = frame.shape[:2]
-			_, frame1 = video.read()
 			frame_expanded = np.expand_dims(frame, axis=0)
 		    
 			if frameCount % self.video_frame ==0:
@@ -114,6 +115,9 @@ class AutoLabel(object):
 			else:
 				frameCount += 1 
 				continue
+			if self.resize_height!=-1 and self.resize_width!=-1:
+				frame = self.ResizeImg(frame,self.resize_width,self.resize_height)
+				pass
 			print("--[ Frame INFO]--")
 			print("frame:",ret)
 			print(frame.shape)
@@ -228,6 +232,10 @@ class AutoLabel(object):
 		else:
 			intersect = (right_line - left_line) * (bottom_line - top_line)
 			return (intersect / (sum_area - intersect))*1.0
+	def ResizeImg(self, img, width:int, height:int):
+		print("resize img to "+str(width)+"*"+str(height))
+		img = cv2.resize(img,(width,height),interpolation=cv2.INTER_CUBIC)
+		return img
 	#check folder exist 確認資料夾是否存在
 	def FolderExist(self, folderName: str) -> bool:
 		if os.path.isdir(folderName):

@@ -11,6 +11,8 @@ parser.add_argument('--video_name', dest='video_name', default='', help='video f
 parser.add_argument('--video_group_folder', dest='video_group_folder', default='', help='if you wnat to label in muti video, type the video folder, and be sure they are all video')
 parser.add_argument('--num_classes', dest='num_classes', type=int, default=1, help='Number of classes the object detector can identify')
 parser.add_argument('--model_threshold', dest='model_threshold', type=float, default=0.8, help='set detect threshold')
+parser.add_argument('--resize_width', dest='resize_width', type=int, default=-1, help='set output image width')
+parser.add_argument('--resize_height', dest='resize_height', type=int, default=-1, help='set output image height')
 
 args = parser.parse_args()
 
