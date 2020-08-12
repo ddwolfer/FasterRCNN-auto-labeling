@@ -44,6 +44,7 @@ num_classes : 有幾個要偵測的物件，預設1
 model_path : model來源，預設inference_graph
 save_path : 儲存的資料夾，預設output
 model_threshold : 偵測目標的閥值，預設0.8，也就是80%準確度
+resize_width && resize_height : 如果圖片需要更改比例，可以在這邊調整，預設-1 也就是不調整
 ```
 ##### 本人測試的環境 my environment(用 pip list 叫出來的)
 ```bash
