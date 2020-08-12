@@ -11,7 +11,7 @@ https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Trai
 <br>
 還有 training 裡面的 labelmap.pbtxt
 <br>
-沒有意外的話大概就可以跑了 下面蔡英文翻譯
+沒有意外的話大概就可以跑了
 <br>
 <br>
 EN:
