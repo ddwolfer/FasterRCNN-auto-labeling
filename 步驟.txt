@@ -1,0 +1,37 @@
+1. 先去下載Faster RCNN用的檔案
+https://drive.google.com/file/d/1gu9MMkA2p82ob1nBgMs0wxVXyqYrI3a8/view?usp=sharing
+
+2. 把它放在C槽裡面
+
+3. 這裡有柏瑜的說明https://drive.google.com/file/d/1mEZtp2JPg7cHLZVrmGdN80BGml2COwDB/view?usp=sharing
+
+4. 設定環境變數 方法一: 去CMD設定 set PYTHONPATH=C:\tensorflow\models;C:\tensorflow\models\research;C:\tensorflow\models\research\slim;C:\tensorflow\models\research\object_detection;
+
+4. 設定環境變數 方法二: 
+	對本機資料夾點右鍵"內容"-> 
+	左側進階系統設定 -> 
+	上方選擇進階 -> 
+	點環境變數 -> 
+	下面欄位點新增 -> 
+	變數名稱設定"PYTHONPATH"，變數值設定"C:\tensorflow\models;C:\tensorflow\models\research;C:\tensorflow\models\research\slim;C:\tensorflow\models\research\object_detection;" -> 
+	按下確定後重新開機
+
+5. 自動標記的程式碼github https://github.com/ddwolfer/FasterRCNN-auto-labeling
+
+6. 用anaconda的CMD進行操作
+
+(如果還沒到自己需要的環境) activate tensorflow
+
+(tensorflow) C:\Users\ddwolf>cd Desktop
+
+(tensorflow) C:\Users\ddwolf\Desktop>cd FasterRCNN-auto-labeling
+
+(tensorflow) C:\Users\ddwolf\Desktop\FasterRCNN-auto-labeling>
+
+cd : 移動 -> cd "資料夾" or cd .. (回到上一個)
+activate : 切換anaconda環境 -> activate tensorflow
+其他常用指令 : https://linux.vbird.org/linux_basic/redhat6.1/linux_06command.php
+
+7. 安裝需要的套件
+如果要安裝特定的版本可以這樣寫
+pip install 套件=版本 如: pip install tensorflow=1.10.0
