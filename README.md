@@ -37,14 +37,14 @@ python main.py --video_name=test.mp4
 ```
 ##### 可以更改的變數(main.py裡面也可以看) arguments(you can also see these in main.py)
 ```bash
-video_name : 影片名稱
-video_group_folder : 如果你想要一口氣測很多影片，把他們放在同一個資料夾，然後在這邊輸入資料夾名稱
-video_frame : 幾個frame辨識一次，預設30，如果影片60frame，就是1秒測2次
-num_classes : 有幾個要偵測的物件，預設1
-model_path : model來源，預設inference_graph
-save_path : 儲存的資料夾，預設output
-model_threshold : 偵測目標的閥值，預設0.8，也就是80%準確度以上就截圖
-resize_width && resize_height : 如果圖片需要更改比例，可以在這邊調整，預設-1 也就是不調整
+--video_name : 影片名稱
+--video_group_folder : 如果你想要一口氣測很多影片，把他們放在同一個資料夾，然後在這邊輸入資料夾名稱
+--video_frame : 幾個frame辨識一次，預設30，如果影片60frame，就是1秒測2次
+--num_classes : 有幾個要偵測的物件，預設1
+--model_path : model來源，預設inference_graph
+--save_path : 儲存的資料夾，預設output
+--model_threshold : 偵測目標的閥值，預設0.8，也就是80%準確度以上就截圖
+--resize_width && --resize_height : 如果圖片需要更改比例，可以在這邊調整，預設-1 也就是不調整
 ```
 ##### 本人測試的環境 my environment(用 pip list 叫出來的)
 ```bash
